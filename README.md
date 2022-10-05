@@ -13,4 +13,21 @@ The kind applies to both builder and runtime. We are in ccase were the builder i
 
 ==> You can then access the route of app-image.
 
+Alternative, s2i Binary build
+That is another way to deploy the application on openshift
 
+The steps:
+
+* `helm install jaxrs-builder -f helm-jaxrs-builder.yaml wildfly/wildfly` [If not already done in previous steps]
+
+* Build the application locally: `mvn clean package -Popenshift`
+
+* `oc new-build --strategy source --binary --image-stream jaxrs-builder-build-artifacts --name twophase-binary-build`
+
+* `oc start-build twophase-binary-build --from-file target/ROOT.war`
+
+* `oc new-app twophase-binary-build`
+
+* `oc expose svc/twophase-binary-build`
+
+==> You can then access the route of twophase-binary-build.
