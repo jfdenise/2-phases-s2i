@@ -1,0 +1,10 @@
+build:
+  uri: https://github.com/jfdenise/2-phases-s2i
+  contextDir: server
+  ref: main
+  s2i:
+    version: latest
+    builderImage: quay.io/jfdenise/wildfly-s2i-2-phases-jdk11
+deploy:
+    enabled: false
+      

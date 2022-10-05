@@ -1,0 +1,9 @@
+build:
+  uri: https://github.com/jfdenise/2-phases-s2i
+  contextDir: application
+  ref: main
+  s2i:
+    builderImage:  jaxrs-builder-build-artifacts:latest
+    runtimeImage: wildfly-runtime-jdk11:latest
+    kind: ImageStreamTag
+      
