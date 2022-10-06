@@ -82,7 +82,7 @@
                             <execution>
                                 <id>provision default config</id>
                                 <goals>
-                                    <goal>provision</goal>
+                                    <goal>package</goal>
                                 </goals>
                                 <phase>compile</phase>
                                 <configuration>
