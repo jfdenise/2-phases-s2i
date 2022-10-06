@@ -63,7 +63,7 @@
             <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
             <id>openshift</id>
             <build>
-                <finalName>DemoApp</finalName>
+                <finalName>DemoApp2</finalName>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -96,7 +96,6 @@
                                     <galleon-options>
                                         <jboss-fork-embedded>true</jboss-fork-embedded>
                                     </galleon-options>
-                                    <runtime-name>ROOT.war</runtime-name>
                                 </configuration>
                             </execution>
                         </executions>
