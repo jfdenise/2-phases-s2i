@@ -68,7 +68,6 @@
                         <version>${version.maven.war.plugin}</version>
                         <configuration>
                             <outputDirectory>target</outputDirectory>
-                            <warName>ROOT</warName>
                         </configuration>
                     </plugin>
                 </plugins>
