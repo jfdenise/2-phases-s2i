@@ -6,8 +6,8 @@ build:
     version: latest
     builderImage: quay.io/jfdenise/wildfly-s2i-2-phases-jdk11
   env:
-      - name: S2I_ENABLE_INCREMENTAL_BUILDS
-        value: "false"
+      - name: WILDFLY_S2I_GENERATE_SERVER_BUILDER
+        value: "true"
 deploy:
     enabled: false
       
