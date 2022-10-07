@@ -5,6 +5,9 @@ build:
   s2i:
     version: latest
     builderImage: quay.io/jfdenise/wildfly-s2i-2-phases-jdk11
+  env:
+      - name: S2I_ENABLE_INCREMENTAL_BUILDS
+        value: "false"
 deploy:
     enabled: false
       
