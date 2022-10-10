@@ -8,6 +8,9 @@ build:
   env:
       - name: WILDFLY_S2I_GENERATE_SERVER_BUILDER
         value: "true"
+      # To hightlight the pattern :<MAVEN/S2I ENV VAR>_WILDFLY_SERVER_BUILDER
+      - name: MAVEN_ARGS_APPEND_WILDFLY_SERVER_BUILDER
+        value: "-Dfoo=bar"
 deploy:
     enabled: false
       
