@@ -5,6 +5,8 @@ build:
   s2i:
     version: latest
     builderImage: quay.io/jfdenise/wildfly-s2i-2-phases-jdk11
+    # Disable generation of the application image. We just need a builder image that will be named jaxrs-builder.
+    buildApplicationImage: false
   env:
       - name: WILDFLY_S2I_GENERATE_SERVER_BUILDER
         value: "true"
@@ -13,4 +15,4 @@ build:
         value: "-Dfoo=bar"
 deploy:
     enabled: false
-      
+

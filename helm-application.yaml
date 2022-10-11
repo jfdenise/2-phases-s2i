@@ -3,7 +3,5 @@ build:
   contextDir: application
   ref: main
   s2i:
-    builderImage:  jaxrs-builder-build-artifacts:latest
-    runtimeImage: wildfly-runtime-jdk11:latest
-    kind: ImageStreamTag
-      
+    builderImage: jaxrs-builder:latest
+    builderKind: ImageStreamTag

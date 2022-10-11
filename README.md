@@ -4,10 +4,9 @@ The goal is to generate an S2I builder image for a given kind of WildFly server.
 
 The steps:
 
-* `helm install jaxrs-builder -f helm-jaxrs-builder.yaml wildfly/wildfly`
+* Make sure to update to the latest Helm release (requires 2.3.0 as a minimum): `helm repo update`
 
-* `oc import-image quay.io/wildfly/wildfly-runtime-jdk11:latest --confirm` Required currently by WildFly Helm charts. 
-The kind applies to both builder and runtime. We are in ccase were the builder is an ImageStreamtag, the runtime a remote docker image.
+* `helm install jaxrs-builder -f helm-jaxrs-builder.yaml wildfly/wildfly`
 
 * `helm install app-image -f helm-application.yaml wildfly/wildfly`
 
@@ -22,7 +21,7 @@ The steps:
 
 * Build the application locally: `mvn clean package -Popenshift`
 
-* `oc new-build --strategy source --binary --image-stream jaxrs-builder-build-artifacts --name twophase-binary-build`
+* `oc new-build --strategy source --binary --image-stream jaxrs-builder --name twophase-binary-build`
 
 * `oc start-build twophase-binary-build --from-file target/ROOT.war`
 
